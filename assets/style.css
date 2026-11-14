@@ -1,0 +1,538 @@
+/* 所有元素的寬度都包含內距與邊框 */
+* {
+  box-sizing: border-box;
+}
+
+/* [特效 1] 點擊導覽列時，平滑捲動至對應區塊 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #d4adbf;
+  color: #4d3540;
+  font-family: "Microsoft JhengHei", sans-serif;
+  line-height: 1.8;
+}
+
+/* 統一各大區塊的寬度並置中 */
+header,
+nav,
+main,
+footer {
+  width: 92%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+a {
+  color: #88445f;
+}
+
+/* 使用鍵盤操作時，清楚顯示目前選到的連結 */
+a:focus-visible {
+  outline: 3px solid #88445f;
+  outline-offset: 5px;
+}
+
+/* 跳到區塊時，保留一點上方空間 */
+header,
+section,
+footer {
+  scroll-margin-top: 20px;
+}
+
+/* 頁首 */
+header {
+  margin-top: 24px;
+  padding: 36px 40px;
+  background-color: #fbe7ed;
+  border-radius: 12px 12px 0 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 40px;
+}
+
+.subtitle {
+  color: #765e69;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding-left: 16px;
+  border-left: 4px solid #99516f;
+  font-size: 20px;
+}
+
+.intro {
+  max-width: 800px;
+  margin-bottom: 0;
+}
+
+/* 導覽列 */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  padding: 16px 30px;
+  background-color: #fffdfc;
+  border-radius: 0 0 12px 12px;
+}
+
+nav a {
+  position: relative;
+  padding-bottom: 3px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* [特效 2] 滑鼠移到導覽連結時，底線由左向右展開 */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #99516f;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* 主要內容 */
+main {
+  padding: 28px 12px;
+}
+
+/* 上半部：左窄右寬 */
+.overview {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.card {
+  padding: 26px;
+  background-color: #fffdfc;
+  border-radius: 12px;
+}
+
+.card h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ecd3dd;
+}
+
+/* 左側個人照片、學習目標與興趣 */
+.profile {
+  text-align: center;
+}
+
+.portrait {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 26px;
+  border: 3px solid #ecd3dd;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 右側學歷與技能 */
+.details {
+  display: grid;
+  gap: 24px;
+}
+
+.note {
+  color: #765e69;
+  font-size: 14px;
+}
+
+/* 技能進度條：全部用 CSS 製作 */
+.skill {
+  margin-bottom: 18px;
+}
+
+.skill p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.skill span {
+  color: #88445f;
+}
+
+.skill-track {
+  height: 12px;
+  overflow: hidden;
+  background-color: #f1e2e8;
+  border-radius: 20px;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: #99516f;
+  border-radius: 20px;
+}
+
+/* 專案與經歷 */
+#experience {
+  margin-top: 36px;
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 24px;
+  padding: 30px;
+  background-color: #fffdfc;
+  border-radius: 12px;
+
+  /* [特效 3] 滑鼠移入經歷卡片時，卡片向上浮動並出現陰影 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(77, 53, 64, 0.18);
+}
+
+.experience-photo {
+  width: 180px;
+  height: 180px;
+  border: 3px solid #ecd3dd;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.experience-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.category {
+  margin-bottom: 6px;
+  color: #88445f;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 頁尾 */
+footer {
+  margin-bottom: 24px;
+  padding: 30px;
+  background-color: #fbe7ed;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.contact-links a {
+  padding: 8px 20px;
+  border: 1px solid #99516f;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.copyright {
+  margin-top: 24px;
+  margin-bottom: 0;
+  color: #765e69;
+  font-size: 13px;
+}
+
+/* 手機版：雙欄改為單欄，避免內容擠在一起 */
+@media (max-width: 650px) {
+  header {
+    padding: 28px 22px;
+  }
+
+  nav {
+    gap: 10px 18px;
+    padding: 16px 22px;
+  }
+
+  main {
+    padding: 24px 0;
+  }
+
+  .overview {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .experience-photo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 使用者設定減少動態效果時，取消動畫 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  nav a::after,
+  .experience-card {
+    transition: none;
+  }
+
+  .experience-card:hover {
+    transform: none;
+  }
+}
+
+/* 經歷區：加寬左側圖片，右側放文字 */
+.experience-card {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+}
+
+/* 同一項經歷有多張照片時，向下排列 */
+.experience-images {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* 保留圖片原始比例，不裁切簡報、獎狀與合照 */
+.experience-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ecd3dd;
+  border-radius: 8px;
+}
+
+/* 手機版：圖片在上，文字在下 */
+@media (max-width: 650px) {
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 技能區的小標題 */
+.skill-heading {
+  margin-top: 26px;
+  margin-bottom: 18px;
+  padding-left: 10px;
+  border-left: 4px solid #99516f;
+  font-size: 18px;
+}
+
+/* 三個專業技能圓環並排 */
+.circle-skills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.circle-item {
+  text-align: center;
+}
+
+/*
+  CSS 技能圓環：
+  --level 控制深色部分所占的百分比。
+  conic-gradient 製作圓形色塊，再用中間的白色圓形形成圓環。
+  不使用圖片。
+*/
+.skill-circle {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: conic-gradient(#99516f 0% var(--level),
+      #f1e2e8 var(--level) 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+/* [特效 4] 滑鼠移入技能圓環時，使用 transition 與 scale 平滑放大 */
+  transition: transform 0.3s ease;
+}
+
+.skill-circle:hover {
+  transform: scale(1.08);
+}
+
+/* 圓環中間的白色圓形與百分比 */
+.skill-circle span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #fffdfc;
+  color: #88445f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.circle-item h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.circle-item p {
+  margin: 0;
+  color: #765e69;
+  font-size: 13px;
+}
+
+/* 中等寬度時縮小圓環，避免右側欄位太擠 */
+@media (min-width: 651px) and (max-width: 900px) {
+  .circle-skills {
+    gap: 8px;
+  }
+
+  .skill-circle {
+    width: 76px;
+    height: 76px;
+  }
+
+  .skill-circle span {
+    width: 56px;
+    height: 56px;
+    font-size: 17px;
+  }
+}
+
+/* 小手機畫面改成單欄 */
+@media (max-width: 380px) {
+  .circle-skills {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* 配合使用者減少動態效果的設定 */
+@media (prefers-reduced-motion: reduce) {
+  .skill-circle {
+    transition: none;
+  }
+
+  .skill-circle:hover {
+    transform: none;
+  }
+}
+
+/* 經歷區：標題獨立一列，三張卡片維持相同高度 */
+#experience {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: 1fr;
+  gap: 24px;
+}
+
+#experience>h2 {
+  margin: 0;
+}
+
+/* 統一卡片的左右比例、內距與排列 */
+#experience .experience-card {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 28px;
+}
+
+/* 每項經歷只展示一張主圖 */
+#experience .experience-images {
+  display: block;
+  min-width: 0;
+}
+
+/* 圖片展示區大小一致，完整保留圖片內容 */
+#experience .experience-images img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background-color: #f8eff3;
+  border: 1px solid #ecd3dd;
+  border-radius: 8px;
+}
+
+#experience .experience-content {
+  min-width: 0;
+}
+
+#experience .experience-content> :last-child {
+  margin-bottom: 0;
+}
+
+/* 證書與影片連結 */
+.certificate-link {
+  display: inline-block;
+  margin-left: 6px;
+  color: #88445f;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* 手機版：圖片在上、文字在下，高度依內容調整 */
+@media (max-width: 650px) {
+  #experience {
+    grid-auto-rows: auto;
+  }
+
+  #experience .experience-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 24px;
+  }
+
+  #experience .experience-images img {
+    height: auto;
+    max-height: 300px;
+  }
+}

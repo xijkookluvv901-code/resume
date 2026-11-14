@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>劉容瑄｜個人履歷</title>
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <!-- 頁首：基本資料、自我介紹、標語 -->
+    <header id="about">
+        <h1>姓名:劉容瑄</h1>
+        <p class="subtitle">中原大學／資訊管理學系</p>
+
+        <blockquote>「把每一次學習，變成下一步的實力。」</blockquote>
+
+        <p class="intro">
+            我目前就讀於中原大學資訊管理學系，對人工智慧領域有興趣，
+            希望學習如何運用 AI 工具，協助人們解決實際問題。
+            我的個性比較內向，但做事細心，面對需要耐心處理的任務時，
+            能夠保持專注，也願意花時間釐清不懂的地方。
+            平常喜歡閱讀長篇文章，慢慢理解不同的觀點。
+            我希望在大學期間透過課程與實作累積程式設計和問題解決能力，
+            同時練習更主動地表達想法，為未來進入科技業做好準備。
+        </p>
+    </header>
+
+    <!-- 導覽列：連到同一頁的各個區塊 -->
+    <nav aria-label="頁內導覽">
+        <a href="#about">基本資訊</a>
+        <a href="#education">學歷</a>
+        <a href="#skills">專業技能</a>
+        <a href="#experience">專案與經歷</a>
+        <a href="#contact">聯絡方式</a>
+    </nav>
+    <main>
+        <!-- 上半部：左側照片，右側學歷與技能 -->
+        <div class="overview">
+            <aside class="card profile">
+                <img class="portrait" src="image/profile.jpg" alt="個人照片" />
+
+                <h2>學習目標</h2>
+
+                <p>
+                    <strong>英語能力</strong><br />
+                    畢業前取得多益 900 分，並持續練習英語口說與聽力，
+                    希望能與外國人進行日常交流，清楚表達自己的想法。
+                </p>
+
+                <p>
+                    <strong>專業能力</strong><br />
+                    打好程式設計基礎，透過課程專案練習 AI 的應用，
+                    逐步累積能展示自己能力的作品。
+                </p>
+
+                <h2>個人興趣</h2>
+
+                <p>
+                    <strong>閱讀長篇文章</strong><br />
+                    喜歡花時間深入了解一個主題，接觸不同觀點，
+                    整理自己的想法。
+                </p>
+
+                <p>
+                    <strong>節奏遊戲</strong><br />
+                    喜歡配合音樂節奏完成挑戰，
+                    享受反覆練習後更熟練、成績進步的成就感。
+                </p>
+            </aside>
+            <div class="details">
+                <!-- 學歷 -->
+                <section id="education" class="card">
+                    <h2>學歷</h2>
+                    <h3>中原大學－資訊管理學系</h3>
+                    <p>目前年級：大二</p>
+                    <p>就讀期間：2025–2029（預計畢業）</p>
+                    <p>
+                        相關學習內容：Python、Java 程式設計，
+                        以及 HTML、CSS 網頁設計。
+                    </p>
+                </section>
+
+                <!-- 技能：CSS 圓環與進度條 -->
+                <section id="skills" class="card">
+                    <h2>專業與程式技能</h2>
+
+                    <p class="note">
+                        以下為目前學習程度的自我評估。
+                        我仍在累積基礎，會透過課程、練習與專案持續加強。
+                    </p>
+
+                    <h3 class="skill-heading">專業技能</h3>
+
+                    <div class="circle-skills">
+                        <div class="circle-item">
+                            <div class="skill-circle" style="--level: 70%">
+                                <span>70%</span>
+                            </div>
+                            <h4>CSS 版面美化</h4>
+                            <p>配色、字體與間距調整</p>
+                        </div>
+
+                        <div class="circle-item">
+                            <div class="skill-circle" style="--level: 65%">
+                                <span>65%</span>
+                            </div>
+                            <h4>網頁排版</h4>
+                            <p>Flexbox、Grid 區塊配置</p>
+                        </div>
+
+                        <div class="circle-item">
+                            <div class="skill-circle" style="--level: 60%">
+                                <span>60%</span>
+                            </div>
+                            <h4>英語閱讀</h4>
+                            <p>英文文章與基礎技術資料閱讀</p>
+                        </div>
+                    </div>
+                    <h3 class="skill-heading">程式技能</h3>
+
+                    <!-- 百分比文字與 width 數字要保持一致 -->
+                    <div class="skill">
+                        <p>HTML <span>65%</span></p>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <p>CSS <span>60%</span></p>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <p>Python <span>70%</span></p>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <p>Java <span>65%</span></p>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </section> <!-- 結束技能區 -->
+            </div> <!-- 結束右側 details -->
+        </div> <!-- 結束上半部 overview -->
+
+
+
+        <!-- 專案與經歷 -->
+        <section id="experience">
+            <h2>專案與個人經歷</h2>
+
+            <!-- 第一項經歷：企業概論 -->
+            <article class="experience-card">
+                <div class="experience-images">
+                    <img src="image/business.jpg" alt="企業概論課程的廣宣方案，包含海報、傳單與宣傳影片" />
+                </div>
+
+                <div class="experience-content">
+                    <p class="category">經歷一／課程專案</p>
+                    <h3>企業概論－旅遊行程企劃</h3>
+                    <p><strong>參與角色：</strong>生產者</p>
+
+                    <p>
+                        在企業概論課程中，我與組員一起完成桃園旅遊行程企劃，
+                        並在組內擔任生產者，負責部分簡報製作與宣傳影片剪輯，
+                        也參與文宣方案的設計討論。
+                        製作過程中，我練習整理行程重點，透過簡報排版與影片剪輯，
+                        讓觀眾更容易理解景點及行程特色。
+                        這次經驗讓我學到，宣傳內容除了畫面美觀，也需要清楚傳達資訊，
+                        而不同成員製作的內容，更需要透過溝通與調整維持一致。
+                    </p>
+
+                    <p class="note">
+                        成果佐證：小組廣宣方案簡報與宣傳影片。
+                        <a class="certificate-link" href="https://www.instagram.com/playyywithus/reel/DSSnnZgkqEd/"
+                            target="_blank" rel="noopener noreferrer">
+                            觀看宣傳影片 ↗
+                        </a>
+                    </p>
+                </div>
+            </article>
+
+            <!-- 第二項經歷：合照作為主圖，證書改為連結 -->
+            <article class="experience-card">
+                <div class="experience-images">
+                    <img src="image/camp.jpg" alt="參加成功大學經濟營時的小組團體合照" />
+                </div>
+
+                <div class="experience-content">
+                    <p class="category">經歷二／營隊活動</p>
+                    <h3>成功大學經濟營</h3>
+                    <p><strong>參與角色：</strong>營隊學員、第四小組成員</p>
+
+                    <p>
+                        我曾參加成功大學經濟營，和同組學員一起參與營隊活動。
+                        在陌生的環境中，我練習主動與人交流，也學習在團體中配合彼此。
+                        這段經驗讓我有機會接觸不同的人，感受大學校園的生活，
+                        並思考自己的學習興趣。照片記錄了我們的小組合照，
+                        以及小組獲頒的團體證書，留下這次參與的回憶。
+                    </p>
+
+                    <p class="note">
+                        活動佐證：營隊團體合照與小組證書。
+                        <a class="certificate-link" href="image/camp-certificate.jpg" target="_blank"
+                            rel="noopener noreferrer">
+                            查看營隊證書 ↗
+                        </a>
+                    </p>
+                </div>
+            </article>
+
+            <!-- 第三項經歷：動物之家 -->
+            <article class="experience-card">
+                <div class="experience-images">
+                    <img src="image/animal.jpg" alt="管理學動物之家服務成果簡報，呈現環境清潔與參訪紀錄" />
+                </div>
+
+                <div class="experience-content">
+                    <p class="category">經歷三／服務學習</p>
+                    <h3>管理學－動物之家服務</h3>
+                    <p><strong>參與角色：</strong>服務學習小組成員</p>
+
+                    <p>
+                        在管理學課程中，我與組員前往動物之家參與服務，
+                        擔任志工並協助環境清潔，透過實際接觸，
+                        了解收容動物的生活環境與照顧需求。
+                        這次經驗讓我發現，流浪動物問題不只與動物有關，
+                        也與飼主責任和人們的飼養觀念息息相關。
+                        我更理解認養代替購買的意義，也希望把尊重生命、
+                        負責任飼養的觀念分享給身邊的人。
+                    </p>
+
+                    <p class="note">服務佐證：動物之家服務成果簡報與活動紀錄。</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>聯絡方式</h2>
+        <p>歡迎透過 Facebook 或 Email 與我聯絡。</p>
+
+        <div class="contact-links">
+            <a href="mailto:xijkookluvv901@gmail.com">
+                Email 聯絡我
+            </a>
+
+            <a href="https://www.facebook.com/share/1BidSKzNLW/?mibextid=wwXIfr" target="_blank"
+                rel="noopener noreferrer">
+                Facebook
+            </a>
+        </div>
+
+        <p class="copyright">劉容瑄｜個人履歷</p>
+    </footer>
+</body>
+
+</html>
